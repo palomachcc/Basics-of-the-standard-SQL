@@ -1,0 +1,7 @@
+https://www.w3schools.com/sql/sql_datatypes.asp
+
+https://www.w3schools.com/sql/func_sqlserver_convert.asp
+The CONVERT() function converts a value (of any type) into a specified datatype. CONVERT(data_type(length), expression, style) 
+style:Optional. The format used to convert between data types, such as a date or string format. Can be one of the following values
+
+The CAST() function converts a value (of any type) into a specified datatype. CAST(expression AS datatype(length))
