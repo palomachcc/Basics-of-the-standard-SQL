@@ -1,4 +1,4 @@
-# B**asics of the standard SQL**
+# B**asics of the standard SQL** ![Badge en Desarollo](https://img.shields.io/badge/STATUS-EN%20DESAROLLO-green)
 
 SQL (Structured Query Language) es un lenguaje estandarizado para acceder y manipular bases de datos.
 
@@ -6,8 +6,8 @@ A pesar de que es un lenguaje ANSI/ISO estandarizado, puede haber algunas difere
 
 Algunos ejemplos de sistemas para bases de datos relacionales son: MS SQL Server, IBM DB2, Oracle, MySQL, Microsoft Access, PostgreSQL, SQLite.
 
-## Tablas
 
+### Tablas
 Las bases de datos relacionales guardan la info en tablas. Cada tabla tiene un nombre para poder ubicarla y ver que objetos contiene. Compuesta por columnas (atributos) y filas (registros, tuplas). Las columnas tienen nombre y contienen un tipo de dato especificado por la estructura o el modelo de la base.
 
 Para sacar información de la base de datos realizamos consultas o querys. Para hacer un repaso general de los conceptos básicos voy a usar la siguiente tabla a modo de ejemplo.
