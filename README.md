@@ -175,3 +175,28 @@ WHERE production_year BETWEEN 1999 AND 2005
 ## 2°Parte
 ### Multiples tablas
 Las tablas individuales pueden parecer útiles al principio, pero en bases de datos grandes siempre usamos múltiples tablas. Esto también significa que a menudo queremos obtener datos de más de una tabla al mismo tiempo.
+
+Para los próximos ejemplos voy a usar datos acerca de películas y sus directores. Tengo las siguientes tablas:
+
+Movie
+
+| ID | Title | Production_year | Director_ID |
+| --- | --- | --- | --- |
+| 1 | Psycho | 1960 | 1 |
+| 2 | Saving Private Ryan | 1998 | 2 |
+| 3 | Schindler's List | 1993 | 2 |
+| 4 | Midnight in Paris | 2011 | 3 |
+| 5 | Sweet and Lowdown | 1993 | 3 |
+| 6 | Pulp fiction | 1994 | 4 |
+| 7 | Talk to her | 2002 | 5 |
+| 8 | The skin I live in | 2011 | 5 |
+
+Director
+
+| ID | Name | Birth_year |
+| --- | --- | --- |
+| 1 | Alfred Hitchcock | 1899 |
+| 2 | Steven Spielberg | 1946 |
+| 3 | Woody Allen | 1935 |
+| 4 | Quentin Tarantino | 1963 |
+| 5 | Pedro Almodóvar | 1949 |
