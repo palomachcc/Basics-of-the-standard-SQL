@@ -156,3 +156,18 @@ WHERE price IS NULL;
 ```
 
 Me devuelve aquellos registros con valores nulos.
+
+---
+
+En resumen a todo esto, una consulta podría ser : necesito los datos de aquellos autos que se produjeron entre 1995 y 2005. Que  no son de la marca Volkswagen, cuyos modelos comienzan con las letras P o F y que tienen su precio.
+
+```sql
+SELECT *
+FROM car
+WHERE production_year BETWEEN 1999 AND 2005
+  AND brand != 'Volkswagen'
+  AND (model LIKE 'P%' OR model LIKE 'F%')
+  AND price IS NOT NULL;
+```
+![image](https://user-images.githubusercontent.com/110131341/228865409-96b6bc0c-f042-4efa-bcaf-7607ffda328c.png)
+
