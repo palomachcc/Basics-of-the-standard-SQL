@@ -6,7 +6,7 @@ A pesar de que es un lenguaje ANSI/ISO estandarizado, puede haber algunas difere
 
 Algunos ejemplos de sistemas para bases de datos relacionales son: MS SQL Server, IBM DB2, Oracle, MySQL, Microsoft Access, PostgreSQL, SQLite.
 
-
+## 1°Parte
 ### Tablas
 Las bases de datos relacionales guardan la info en tablas. Cada tabla tiene un nombre para poder ubicarla y ver que objetos contiene. Compuesta por columnas (atributos) y filas (registros, tuplas). Las columnas tienen nombre y contienen un tipo de dato especificado por la estructura o el modelo de la base.
 
@@ -172,5 +172,6 @@ WHERE production_year BETWEEN 1999 AND 2005
 ![image](https://user-images.githubusercontent.com/110131341/228865409-96b6bc0c-f042-4efa-bcaf-7607ffda328c.png)
 
 ---
+## 2°Parte
 ### Multiples tablas
 Las tablas individuales pueden parecer útiles al principio, pero en bases de datos grandes siempre usamos múltiples tablas. Esto también significa que a menudo queremos obtener datos de más de una tabla al mismo tiempo.
