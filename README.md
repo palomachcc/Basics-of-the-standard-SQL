@@ -171,3 +171,6 @@ WHERE production_year BETWEEN 1999 AND 2005
 ```
 ![image](https://user-images.githubusercontent.com/110131341/228865409-96b6bc0c-f042-4efa-bcaf-7607ffda328c.png)
 
+---
+### Multiples tablas
+Las tablas individuales pueden parecer útiles al principio, pero en bases de datos grandes siempre usamos múltiples tablas. Esto también significa que a menudo queremos obtener datos de más de una tabla al mismo tiempo.
