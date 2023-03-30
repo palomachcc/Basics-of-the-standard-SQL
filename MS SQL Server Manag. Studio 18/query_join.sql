@@ -2,8 +2,8 @@
 
 --------NIVEL TACTICO
 --1.
---Identificar para cada ·rea: el aÒo y el mes de ingreso(concatenados en formato YYYYMM), cantidad de estudiantes y monto total de las asignaturas. 
---Ordenar por mes del m·s actual al m·s antiguo y por cantidad de clientes de mayor a menor.
+--Identificar para cada √°rea: el a√±o y el mes de ingreso(concatenados en formato YYYYMM), cantidad de estudiantes y monto total de las asignaturas. 
+--Ordenar por mes del m√°s actual al m√°s antiguo y por cantidad de clientes de mayor a menor.
 
 --quiero Nombre del area, fecha , cantidad de estudiantes y total
 
@@ -23,7 +23,7 @@ order by YYYYMM desc, Cantidad_estudiantes desc;
 
 --lo mismo q arriba pero escrito algo dif
 select 
- convert(varchar(6),Estudiantes.[Fecha Ingreso],112) as AÒo_mes,
+ convert(varchar(6),Estudiantes.[Fecha Ingreso],112) as A√±o_mes,
  area.Nombre,
  count(estudiantes.EstudiantesID) as cant_estudiantes,
  sum(Asignaturas.costo) as costo_total
@@ -33,7 +33,7 @@ from Estudiantes
 	inner join Area on Area.AreaID=Asignaturas.Area
 
 group by Area.Nombre,convert(varchar(6),Estudiantes.[Fecha Ingreso],112)
-order by AÒo_mes desc, cant_estudiantes desc;
+order by A√±o_mes desc, cant_estudiantes desc;
 
 --2.Se requiere saber el id del encargado, el nombre, el apellido y cuantos son los docentes que tiene asignados cada encargado
 
@@ -49,7 +49,7 @@ from Encargado
 where tipo like '%docentes%'
 group by Encargado.Encargado_ID, Encargado.Nombre
 
---Luego filtrar los encargados que tienen como resultado 0 ya que son los encargados que NO tienen asignado un docente. Renombrar el campo de la operaciÛn como Cant_Docentes
+--Luego filtrar los encargados que tienen como resultado 0 ya que son los encargados que NO tienen asignado un docente. Renombrar el campo de la operaci√≥n como Cant_Docentes
 --una opcion es agregar having count(staff.docentesID)=0 al codigo de arriba 
 
 select
@@ -127,8 +127,8 @@ where E.Tipo like '%tutor%' and A.Jornada like '%noche%'
 
 --Si en el segundo join pones INNER JOIN, no te va a devolver aquellos registros nulos del primer join tampoco aunque el join anterior diga LEFT JOIN
 
----5.	An·lisis asignaturas sin docentes o tutores: 
----	Identificar el tipo de asignatura, la jornada, la cantidad de ·reas ˙nicas y la cantidad total de asignaturas que no tienen asignadas docentes o tutores.
+---5.	An√°lisis asignaturas sin docentes o tutores: 
+---	Identificar el tipo de asignatura, la jornada, la cantidad de √°reas √∫nicas y la cantidad total de asignaturas que no tienen asignadas docentes o tutores.
  
 
 --vamos primero con tipo de asginatura,jornada, area y docente/tutor asignado o null si no hay
@@ -156,7 +156,7 @@ from Asignaturas a
 where s.DocentesID is null
 group by a.tipo,a.Jornada
 
---6.Identificar el nombre de la asignatura, el costo de la asignatura y el promedio del costo de las asignaturas por ·rea. (los precios varian segun la jornada)
+--6.Identificar el nombre de la asignatura, el costo de la asignatura y el promedio del costo de las asignaturas por √°rea. (los precios varian segun la jornada)
 --	Una vez obtenido el dato, del promedio se debe visualizar solo las carreras que se encuentran por encima del promedio. 
 
 select
@@ -194,9 +194,9 @@ from Asignaturas a
 	on P.Area=A.Area
 where A.Costo>P.promedio_costo
 
---5.	An·lisis aumento de salario docentes: 
---	Identificar el nombre, documento, el ·rea, la asignatura y el aumento del salario del docente, este ultimo calcularlo sac·ndole un porcentaje al costo
---de la asignatura, todos las ·reas tienen un porcentaje distinto, Marketing-17%, DiseÒo-20%, Programacion-23%, Producto-13%, Data-15%, Herramientas 8%
+--5.	An√°lisis aumento de salario docentes: 
+--	Identificar el nombre, documento, el √°rea, la asignatura y el aumento del salario del docente, este ultimo calcularlo sac√°ndole un porcentaje al costo
+--de la asignatura, todos las √°reas tienen un porcentaje distinto, Marketing-17%, Dise√±o-20%, Programacion-23%, Producto-13%, Data-15%, Herramientas 8%
 
 select
 S.DocentesID,
@@ -211,7 +211,7 @@ select
 S.DocentesID,
 S.Documento,
 A.*,
-cast(Costo*0.20 as decimal(7,3)) AS AUMENTO --EL 20% ES SOLO PARA DISE—O
+cast(Costo*0.20 as decimal(7,3)) AS AUMENTO --EL 20% ES SOLO PARA DISE√ëO
 from Staff S
 inner join Asignaturas A on S.Asignatura=A.AsignaturasID
 where A.Area=1
