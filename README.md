@@ -5,6 +5,7 @@ SQL (Structured Query Language) es un lenguaje estandarizado para acceder y mani
 A pesar de que es un lenguaje ANSI/ISO estandarizado, puede haber algunas diferencias en la sintaxis según el programa que usemos para gestionar la base de datos (similar a los lenguajes y sus dialectos). 
 
 Algunos ejemplos de sistemas para bases de datos relacionales son: MS SQL Server, IBM DB2, Oracle, MySQL, Microsoft Access, PostgreSQL, SQLite.
+[Stack Overflow Developer Survey 2022](https://survey.stackoverflow.co/2022/#section-most-popular-technologies-databases) 
 
 ## 1°Parte
 ### Tablas
