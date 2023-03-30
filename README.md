@@ -1,5 +1,3 @@
-# SQL
-
 # B**asics of the standard SQL**
 
 SQL (Structured Query Language) es un lenguaje estandarizado para acceder y manipular bases de datos.
