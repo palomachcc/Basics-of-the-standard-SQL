@@ -36,7 +36,7 @@ where Asignatura in (
 	where nombre like('%UX%')
 	)
 
---quiero el 25% de aumento para las asignaturas del área de marketing de la jornada mañana. Para traer toda la tabla pongo " select*, ". 
+--quiero el 25% de aumento para las asignaturas del Ã¡rea de marketing de la jornada maÃ±ana. Para traer toda la tabla pongo " select*, ". 
 -- resultado con tres decimales
 select*,(Costo*1.25 ) as Costo_porcentaje, CAST( Costo*1.25 AS DECIMAL(10, 3)) as Costo_aumento
 from Asignaturas
