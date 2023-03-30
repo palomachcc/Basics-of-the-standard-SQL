@@ -200,3 +200,15 @@ Director
 | 3 | Woody Allen | 1935 |
 | 4 | Quentin Tarantino | 1963 |
 | 5 | Pedro Almodóvar | 1949 |
+
+Cuando tenés multiples tablas, referencias columnas específicas dando el nombre de la tabla y la columna, separados por un punto (.).
+
+Por ejemplo:
+
+```sql
+SELECT *
+FROM movie, director
+WHERE movie.director_id = director.id;
+```
+
+![image](https://user-images.githubusercontent.com/110131341/228905399-b3ec2ccf-97b8-49b6-b90c-152e57586e18.png)
