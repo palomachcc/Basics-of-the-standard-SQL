@@ -203,7 +203,7 @@ Director
 | 4 | Quentin Tarantino | 1963 |
 | 5 | Pedro Almodóvar | 1949 |
 
-Cuando tenés multiples tablas, referencias columnas específicas dando el nombre de la tabla y la columna, separados por un punto (.).
+Cuando tenés múltiples tablas, debes hacer referencia a columnas específicas mediante el nombre de la tabla y la columna separados por un punto (.). A veces es innecesario porque los nombres de columnas son diferentes, pero es una buena práctica.
 
 Por ejemplo:
 
@@ -242,3 +242,60 @@ JOIN director
 ```
 
 ![image](https://user-images.githubusercontent.com/110131341/229508201-5c930ef3-590e-47ce-9f1e-ece7cb9c02f0.png)
+
+### Renombrar columnas con AS
+
+```sql
+SELECT
+  title AS movie_title,
+  name
+FROM movie
+JOIN director
+  ON director_id = director.id;
+```
+
+El nuevo nombre es solo un alias, es temporal y no cambia el nombre real de la columna en la base de datos. Solo influye en la forma en que se muestra la columna en el resultado de la consulta. Esta técnica se utiliza a menudo cuando hay algunas columnas con el mismo nombre que provienen de diferentes tablas.
+
+Otro ejemplo con condiciones : Selecciona todas las columnas de las tablas de películas ("movie") y directores ("director") de tal manera que cada película se muestre junto con su director. Selecciona únicamente aquellas películas que fueron realizadas después del año 2000. 
+
+```sql
+SELECT*
+FROM movie
+JOIN director
+  ON director_id=director.id
+WHERE production_year > 2000;
+```
+![image](https://user-images.githubusercontent.com/110131341/229513093-4d72f7f6-251a-49b1-8d72-0aba3a1133c2.png)
+
+Si solo quiero seleccionar aquellas que fueron producidas por Steven Spielberg
+
+```sql
+SELECT *
+FROM movie
+JOIN director
+  ON director_id = director.id
+WHERE director.name LIKE 'Steven Spielberg';
+```
+---
+
+En resumen a todo esto, una consulta podría ser : 
+
+Selecciona el título, año de producción, nombre del director y nacimiento del director de tal manera que cada película se muestre junto con su director.
+
+Mostrar la columna de año de nacimiento como "born_in". Filtrar únicamente aquellas películas que fueron filmadas cuando su director tenía menos de 40 años.
+
+```sql
+SELECT 
+	movie.title,
+    movie.production_year,
+    director.name,
+    director.birth_year AS born_in
+FROM movie
+JOIN director
+  ON movie.director_id = director.id
+WHERE (movie.production_year - director.birth_year) < 40;
+```
+![image](https://user-images.githubusercontent.com/110131341/229517657-b1f73884-fbb2-4be3-ae20-db1bd8352694.png)
+
+---
+
