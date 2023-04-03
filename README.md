@@ -213,3 +213,31 @@ WHERE movie.director_id = director.id;
 ```
 
 ![image](https://user-images.githubusercontent.com/110131341/228905399-b3ec2ccf-97b8-49b6-b90c-152e57586e18.png)
+
+### ****Join tables using JOIN****
+
+Existen comandos específicos para unir las tablas. Podemos obtener el mismo resultado de la consulta anterior de la manera siguiente:
+
+```sql
+SELECT *
+FROM movie
+JOIN director
+  ON movie.director_id = director.id;
+```
+
+JOIN se utiliza para combinar filas de dos o más tablas, en base a una columna relacionada entre ellas.
+
+Para unir dos tablas uso JOIN entre los nombres de cada una de ellas y, para indicarle en base a que condicion, usamos ON.
+
+Si queremos seleccionar ciertas columnas:
+
+```sql
+SELECT
+	director.name,
+  movie.title
+FROM movie
+JOIN director
+  ON movie.director_id = director.id;
+```
+
+![image](https://user-images.githubusercontent.com/110131341/229508201-5c930ef3-590e-47ce-9f1e-ece7cb9c02f0.png)
