@@ -215,7 +215,7 @@ WHERE movie.director_id = director.id;
 
 ![image](https://user-images.githubusercontent.com/110131341/228905399-b3ec2ccf-97b8-49b6-b90c-152e57586e18.png)
 
-### ****Join tables using JOIN****
+### ****Unir tablas con JOIN****
 
 Existen comandos específicos para unir las tablas. Podemos obtener el mismo resultado de la consulta anterior de la manera siguiente:
 
